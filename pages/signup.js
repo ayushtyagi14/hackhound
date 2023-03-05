@@ -31,7 +31,7 @@ const Signup = () => {
             redirect: 'follow'
         };
 
-        fetch("https://gravity-grill.onrender.com/api/user/signup", requestOptions)
+        fetch("https://gravity-grills-backend.onrender.com/api/user/signup", requestOptions)
             .then(response => response.text(),)
             .then(result => {
                 setLoading(false)
@@ -63,8 +63,8 @@ const Signup = () => {
     };
 
     return (
-        <>
-            <div className='my-2 pt-2 rounded-lg text-center border mx-auto md:w-[40%] flex flex-col items-center text-[#ebebeb]'>
+        <div className="login-bg h-screen pt-5">
+            <div className='rounded-lg text-center border mx-auto md:w-[40%] flex flex-col items-center bg-white'>
                 <h1 className='text-[30px]'>SIGN UP</h1>
                 <form
                     className="flex flex-col justify-center space-y-5 md:w-[80%] w-full rounded-lg p-7"
@@ -79,7 +79,7 @@ const Signup = () => {
                         </label>
                         <input
                             type="text"
-                            className="border rounded px-4 py-2 text-black"
+                            className="border rounded px-4 py-2  bg-[#3a3c3b] text-white"
                             placeholder="Enter your name"
                             name="name"
                             required
@@ -96,7 +96,7 @@ const Signup = () => {
                         </label>
                         <input
                             type="email"
-                            className="border rounded px-4 py-2 text-black"
+                            className="border rounded px-4 py-2  bg-[#3a3c3b] text-white"
                             placeholder="Enter your email"
                             name="email"
                             value={email}
@@ -113,7 +113,7 @@ const Signup = () => {
                         </label>
                         <input
                             type="number"
-                            className="border rounded px-4 py-2 text-black"
+                            className="border rounded px-4 py-2  bg-[#3a3c3b] text-white"
                             placeholder="Enter your phone number"
                             onWheel={(e) => e.target.blur()}
                             value={mobileNumber}
@@ -130,7 +130,7 @@ const Signup = () => {
                         </label>
                         <input
                             type="password"
-                            className="border rounded px-4 py-2 text-black"
+                            className="border rounded px-4 py-2  bg-[#3a3c3b] text-white"
                             placeholder="Enter your password"
                             name="password"
                             value={password}
@@ -153,7 +153,7 @@ const Signup = () => {
                 </form>
                 <p className='mb-10'>Already have an account? <span className=' text-blue-800 cursor-pointer' onClick={() => router.push('/login')}>LogIn</span></p>
             </div>
-        </>
+        </div>
     )
 }
 

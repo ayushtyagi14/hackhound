@@ -12,7 +12,7 @@ const Reservation = ({ onTabClick }) => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [people, setPeople] = useState("");
-  const [request, setRequest] = useState("");
+  const [specialRequest, setSpecialRequest] = useState("");
   const [userId, setUserId] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -25,23 +25,27 @@ const Reservation = ({ onTabClick }) => {
 
     setLoading(true);
     const data = {
-      userId,
-      name,
-      email,
-      people,
-      selectedDate,
-      number,
-      request,
+      userId: userId,
+      userName: name,
+      userEmail: email,
+      numberOfPeople: people,
+      date: selectedDate,
+      contactNumber: number,
+      specialRequest: specialRequest,
     };
 
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-      redirect: "follow",
+      headers: {
+        "Content-Type": "application/json",
+      },
     };
 
-    fetch("https://gravity-grill.onrender.com/api/reservation", requestOptions)
+    fetch(
+      "https://gravity-grills-backend.onrender.com/api/reservation",
+      requestOptions
+    )
       .then((response) => response.text())
       .then((result) => {
         setLoading(false);
@@ -53,6 +57,7 @@ const Reservation = ({ onTabClick }) => {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 1500,
           });
+          localStorage.setItem("menuItem", JSON.stringify(data.menu));
           handleTabClick("Menu");
         } else {
           toast.error(`${data.message}`, {
@@ -75,9 +80,12 @@ const Reservation = ({ onTabClick }) => {
 
   return (
     <>
+      <h1 className="text-[40px] text-center font-vollkron font-bold mb-3">
+        Reserve your Table Now!
+      </h1>
       <form
         onSubmit={handleSubmit}
-        className="border w-[90%] mx-auto p-5 h-[90vh] flex flex-col justify-between"
+        className="border rounded-lg w-[90%] mx-auto p-5 h-[90vh] flex flex-col justify-between mb-10"
       >
         <div>
           <div className="grid grid-cols-2">
@@ -148,8 +156,8 @@ const Reservation = ({ onTabClick }) => {
               className="text-white bg-[#3a3c3b] border border-white rounded py-1.5 px-1 text-[12px] mt-2"
               rows="10"
               cols="50"
-              value={request}
-              onChange={(event) => setRequest(event.target.value)}
+              value={specialRequest}
+              onChange={(event) => setSpecialRequest(event.target.value)}
             />
           </div>
         </div>

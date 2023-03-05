@@ -26,7 +26,7 @@ const Login = () => {
             redirect: 'follow'
         };
 
-        fetch("https://gravity-grill.onrender.com/api/user/login", requestOptions)
+        fetch("https://gravity-grills-backend.onrender.com/api/user/login", requestOptions)
             .then(response => response.text(),)
             .then(result => {
                 setLoading(false)
@@ -57,8 +57,8 @@ const Login = () => {
     };
 
     return (
-        <>
-            <div className='my-10 pt-2 rounded-lg text-center border mx-auto md:w-[40%] flex flex-col items-center text-[#ebebeb]'>
+        <div className="login-bg h-screen pt-20">
+            <div className='rounded-lg text-center border mx-auto md:w-[40%] flex flex-col items-center bg-white'>
                 <h1 className='text-[30px]'>LogIn</h1>
                 <form
                     className="flex flex-col justify-center space-y-5 md:w-[80%] w-full rounded-lg p-7"
@@ -73,7 +73,7 @@ const Login = () => {
                         </label>
                         <input
                             type="email"
-                            className="border rounded px-4 py-2"
+                            className="border rounded px-4 py-2 bg-[#3a3c3b] text-white"
                             placeholder="Enter your email"
                             name="email"
                             required
@@ -90,7 +90,7 @@ const Login = () => {
                         </label>
                         <input
                             type="password"
-                            className="border rounded px-4 py-2"
+                            className="border rounded px-4 py-2 bg-[#3a3c3b] text-white"
                             placeholder="Enter your password"
                             name="password"
                             value={password}
@@ -119,7 +119,7 @@ const Login = () => {
                 </form>
                 <p className='mb-10'>Don't have an account? <span className=' text-blue-800 cursor-pointer' onClick={() => router.push('/signup')}>SignUp</span></p>
             </div>
-        </>
+        </div>
     )
 }
 

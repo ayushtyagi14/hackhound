@@ -21,3 +21,15 @@ input:focus {
   outline: none;
   border: none;
 }
+
+.dashboard-bg {
+  background-image: url("/dashboard-bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.login-bg {
+  background-image: url("/login-bg.png");
+  background-size: cover;
+  background-position: center;
+}

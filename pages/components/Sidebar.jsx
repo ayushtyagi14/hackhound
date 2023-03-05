@@ -41,7 +41,12 @@ const Sidebar = ({ onTabClick }) => {
             Feedback
           </button>
         </div>
-        <button className="bottom-0">LogOut</button>
+        <button
+          className="mt-20 text-center ml-20 border py-2 px-4 rounded-lg hover:bg-[#743a7d]"
+          onClick={() => router.push("/login")}
+        >
+          Logout
+        </button>
       </div>
     </>
   );
