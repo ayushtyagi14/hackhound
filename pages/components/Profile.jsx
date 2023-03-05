@@ -5,32 +5,6 @@ import { FaSpinner } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const Profile = () => {
-  const yourReservation = () => {
-    const userId = localStorage.getItem("userId");
-    const requestBody = {
-      userId,
-    };
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(requestBody),
-    };
-
-    fetch(
-      "https://gravity-grills-backend.onrender.com/api/orderedFood",
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => {
-        const data = JSON.parse(result);
-        console.log("DATA", data);
-      });
-  };
-
-  useEffect(() => {
-    yourReservation();
-  }, []);
-
   return (
     <>
       <div className="grid grid-cols-2 mx-8">

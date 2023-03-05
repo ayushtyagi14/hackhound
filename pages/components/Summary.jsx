@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { FaSpinner } from "react-icons/fa";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 const Summary = () => {
   const [summaryData, setSummaryData] = useState({});
@@ -15,7 +16,7 @@ const Summary = () => {
   return (
     <>
       {console.log("summary", summaryData)}
-      <div>
+      <div className="h-screen">
         <h1 className="text-[40px] text-center font-vollkron font-bold">
           Order Summary
         </h1>
@@ -49,40 +50,18 @@ const Summary = () => {
               </p>
             </div>
           </div>
-          <div className="mt-10">
-            <h1 className="text-[30px] font-bold mb-5">Food Item Details</h1>
-            <div className="border mx-3 rounded-lg">
-              {/* {summaryData.dishInfo.map((item, index) => (
-                <>
-                  {console.log(item.dishImgLink)}
-                  <div
-                    className="flex flex-row items-start text-left mt-8 mb-3 mx-3"
-                    key={index}
-                  >
-                    <div className="overflow-hidden">
-                      <img
-                        src={item.dishImgLink}
-                        alt="food-item"
-                        height={250}
-                        width={250}
-                      />
-                    </div>
-                    <div className="ml-4">
-                      <div className="flex flex-row items-center justify-between">
-                        <h1> {item.dishName} </h1>
-                        <span> ${item.dishPrice} </span>
-                      </div>
-                      <p className="mt-4"> {item.dishDesc} </p>
-                    </div>
-                  </div>
-                </>
-              ))} */}
-            </div>
-          </div>
         </div>
-        <h1 className="text-[30px] mb-10 mt-8">
-          Total Amount: ${summaryData.totalAmount}{" "}
-        </h1>
+        <div className="flex flex-row items-center mt-10 mx-20">
+          <h1 className="text-[30px]">
+            Total Amount: ${summaryData.totalAmount}{" "}
+          </h1>
+          <Link
+            href={"https://hackhound-metamask-8288.vercel.app/"}
+            className="ml-20 border py-2 px-4 rounded-lg hover:bg-[#743a7d]"
+          >
+            Pay Now
+          </Link>
+        </div>
       </div>
     </>
   );

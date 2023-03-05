@@ -93,7 +93,7 @@ const Menu = ({ onTabClick }) => {
               <div className="flex flex-col items-center justify-between pb-2">
                 <div className="flex flex-row items-center mt-2">
                   <h1 className="capitalize font-bold">{item.dishName}</h1>
-                  <h1 className="ml-10">₹{item.dishPrice}</h1>
+                  <h1 className="ml-10">${item.dishPrice}</h1>
                 </div>
                 <p className="text-[14px] text-center">{item.dishDesc}</p>
               </div>
