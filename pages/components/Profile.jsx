@@ -43,9 +43,9 @@ const Profile = () => {
             className="rounded-full"
           />
           <div className="mt-8 flex flex-col items-start">
-            <span className="mt-2">Ayush Tyagi</span>
-            <span className="mt-2">ayush.tyagi145@gmail.com</span>
-            <span className="mt-2">9911828286</span>
+            <span className="mt-2">Khushi Sharma</span>
+            <span className="mt-2">khushisharma1309@gmail.com</span>
+            <span className="mt-2">8745871331</span>
           </div>
         </div>
         <div className="border mr-5 bg-[#e1e1e1] text-black shadow-2xl rounded-lg py-5 h-[90vh]">
