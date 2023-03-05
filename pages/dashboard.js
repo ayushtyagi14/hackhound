@@ -7,7 +7,7 @@ import Profile from './components/Profile';
 import Menu from './components/Menu';
 import Summary from './components/Summary';
 
-const dashboard = () => {
+const Dashboard = () => {
     const [activeTab, setActiveTab] = useState("");
 
     const handleTabClick = (tab) => {
@@ -46,4 +46,4 @@ const dashboard = () => {
     )
 }
 
-export default dashboard
+export default Dashboard
