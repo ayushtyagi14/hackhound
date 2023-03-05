@@ -34,7 +34,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className="flex dashboard-bg h-screen">
+            <div className="flex dashboard-bg">
                 <Sidebar onTabClick={handleTabClick} />
                 <main
                     className="flex-grow ml-[17rem] mt-4 transition-all duration-300 ease-in-out text-[#ebebeb]"
